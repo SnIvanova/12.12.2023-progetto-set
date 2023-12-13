@@ -31,7 +31,7 @@
     />
     <!-- stylesheets -->
     <link rel="stylesheet" href="./assets/style.css" />
-    <title>CRUDAZON</title>
+    <title>details-CRUDAZON</title>
 
 </head>
 
@@ -50,34 +50,23 @@
                 alt="CRUDAZON logo"
                 width="120"/>
             </a>
-          <span id="page-index" class="text-white h2 m-0 col-4">
-
-          </span>
+          <span id="page-index" class="text-white h2 m-0 col-4"></span>
         <div class="header-buttons col-4 d-flex justify-content-end">
+            <a class="col-4 d-inline-flex align-items-center text-decoration-none text-white" 
+            href="./index.html">Home</a>
             <button
               id="cart-button"
               type="button"
               class="btn rounded-0 fw-bold d-inline-flex align-items-center text-white">
-                <span id="current-cart-total">
-                0 €
-                </span>
+                <span id="current-cart-total">0 €</span>
                 <i class="bi bi-cart4 ms-2"></i>
             </button>
-            <span id="nav-username" class="text-white me-3">
-
-            </span>
-
+            <span id="nav-username" class="text-white me-3"></span>
             <button
-              id="shop-button"
-              type="button"
-              class="btn rounded-0 fw-bold d-inline-flex align-items-center ms-2 ">
-              SHOP
-            </button>
-            <button
-            href="./backoffice.html"
+              onclick="backoffice()"
               id="back-office-button"
               type="button"
-              class="btn rounded-0 fw-bold d-inline-flex align-items-center text-white ms-2 ">
+              class="btn rounded-0 fw-bold d-inline-flex align-items-center text-white ms-2">
               BACKOFFICE
             </button>
           </div>
@@ -85,9 +74,17 @@
       </nav>
     </header>
 
+    <section id="productsContainer" class="container">
+        <div id="productDetailsContainer" class="container"> 
+          <div class="row">
 
-    <script src="./js/script.js"
-    ></script>
+          </div>
+        </div>
+    </section>
+
+    <div id="loadingIndicator" class="loading-indicator">Loading...</div>
+
+    <script src="./js/details.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
