@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta name="author" content="Snizhana Ivanova">
+    <meta name="description" content="CRUDAZON" />
+    <meta name="keywords" content="CRUDAZON" />
+    <!-- favicon -->
+    <link rel="shortcut icon" href="">
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -36,48 +40,41 @@
 </head>
 
 <body>
-    <header
-      class="z-3 position-sticky top-0 left-0 right-0 d-flex align-items-center justify-content-center shadow">
-      <nav
-        id="navbar"
-        class="navbar navbar-expand-lg navbar-dark bg-dark px-2 w-100 max-1400">
-        <div
-          id="inner-nav"
-          class="container-fluid d-flex align-items-center justify-content-between">
-            <a class="col-4 d-flex justify-content-start" href="#">
-                <img
-                src="./assets/img/logo-removebg-preview.png"
-                alt="CRUDAZON logo"
-                width="120"/>
-            </a>
-          <span id="page-index" class="text-white h2 m-0 col-4">
+  		<!-- Start Header/Navigation -->
+      <nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
 
-          </span>
-        <div class="header-buttons col-4 d-flex justify-content-end">
-            <button
-              id="cart-button"
-              type="button"
-              class="btn rounded-0 fw-bold d-inline-flex align-items-center text-white">
-                <span id="current-cart-total">
-                0 €
-                </span>
-                <i class="bi bi-cart4 ms-2"></i>
-            </button>
-            <span id="nav-username" class="text-white me-3">
-
-            </span>
-            <button
-              onclick="backoffice()"
-              id="BACKOFFICE-button"
-              type="button"
-              class="btn rounded-0 fw-bold d-inline-flex align-items-center text-bg-light ms-2">
+        <div class="container">
+          <a class="navbar-brand" href="index.html"><span><img
+            src="./assets/img/logo-removebg-preview.png"
+            alt="CRUDAZON logo"
+            width="120"/></span></a>
+  
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni" aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+  
+          <div class="collapse navbar-collapse" id="navbarsFurni">
+            <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+              <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li><a class="nav-link" href="shop.html">Shop</a></li>
+              <li><a class="nav-link" href="about.html">About us</a></li>
+              <li><a class="nav-link" href="services.html">Services</a></li>
+              <li><a class="nav-link" href="blog.html">Blog</a></li>
+              <li><a class="nav-link" href="contact.html">Contact us</a></li>
+              <button onclick="backoffice()" id="BACKOFFICE-button" type="button"
+              class="btn rounded-2 fw-bold d-inline-flex align-items-center text-bg-light ms-2">
               BACKOFFICE
             </button>
+            </ul>
+
           </div>
         </div>
+          
       </nav>
-    </header>
-    
+      <!-- End Header/Navigation -->
+
 
     <section id="productsContainer" class="container">
         <div class="row"></div>
