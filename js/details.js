@@ -37,15 +37,14 @@ const getProductDetails = async () => {
     if (productDetailsContainer) {
       const { name, description, brand, imageUrl, price, rating, category, stock, createdAt } = productsD;
       productDetailsContainer.innerHTML = `
-        <div class="col-12">
+        <div class="col-12 text-center">
           <h1>${name}</h1>
-          <img src="${imageUrl}" alt="${description}" class="img-fluid mb-4" />
+          <div class="col-4 rounded mx-auto d-block" >
+          <img src="${imageUrl}" alt="${description}" class="img-fluid img-thumbnail  mb-4" />
+          </div>
           <p>Description: ${description}</p>
           <p>Brand: ${brand}</p>
           <p>Price: ${price === 0 ? 'Free' : `$${price}`}</p>
-          <p>Rating: ${rating || 'N/A'}</p>
-          <p>Category: ${category || 'N/A'}</p>
-          <p>Stock: ${stock || 'N/A'}</p>
           <p>Created At: ${createdAt || 'N/A'}</p>
         </div>`;
     } else {

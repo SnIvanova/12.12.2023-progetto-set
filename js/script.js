@@ -24,8 +24,13 @@ const loadingIndicator = new LoadingIndicator();
 
 
 document.addEventListener("DOMContentLoaded", async () => {
-  loadingIndicator.show(); {
+  loadingIndicator.show();  
+   try {
     await getProducts();
+  } catch (err) {
+    console.error(err);
+  } finally {
+    loadingIndicator.hide();
   }
 });
 
@@ -46,8 +51,7 @@ const getProducts = async () => {
     displayProducts(data);
   } catch (err) {
     console.error(err);
-  } finally {
-    loadingIndicator.hide();
+    throw err;
   }
 };
 
@@ -59,18 +63,23 @@ const displayProducts = (productsArray) => {
     productsContainer.innerHTML = productsArray
       .map(
         ({ name, description, brand, imageUrl, price, _id }) => `
-          <div class="product-card d-flex col-3 card m-4 shadow-sm">
-            <div class="m-1"><img class="card-img-top w-100" src="${imageUrl}" alt="${description}" /></div>
+          <div class="product-card d-flex col-3 card m-3 shadow-sm">
+            <div class="m-1">
+            <strong class="shirt_text card-title text-center">${name}</strong>
+            <img class="card-img-top w-100" src="${imageUrl}" alt="${description}" /></div>
             <div class="card-body p-2">
               <div class="d-flex flex-column justify-content-between align-items-center">
-                <strong class="card-title text-center">${name}</strong>
+                
                 <p class="text-info">${brand}</p>
                 <p class="text-secondary">${description}</p>
-                <p class="text-info">${price === 0 ? "" : `$${price}`}</p>
+                <p class="text-info"> Price : ${price === 0 ? "" : `$${price}`}</p>
               </div>
             </div>
-            <a href="./detail.html?id=${_id}" class="btn btn-primary stretched-link mb-4">Details</a>
-          </div>`
+              <div class="btn_main">
+              <div class="buy_bt"><a href="#">Buy Now</a></div>
+              <div class="seemore_bt"><a href="./detail.html?id=${_id}">Details</a></div>
+              </div>
+            </div>`
       )
       .join("");
   } else {

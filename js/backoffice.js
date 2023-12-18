@@ -19,7 +19,8 @@ const removeElement = (selector) => {
   if (element) element.remove();
 };
 
-const resetForm = () => {
+
+const reset = () => {
   if (confirm("Are you sure you want to reset the form?")) {
     document.querySelector("#productForm").reset();
   }
@@ -28,7 +29,7 @@ const resetForm = () => {
 window.onload = async () => {
   try {
     const parameters = new URLSearchParams(location.search);
-    const ID = parameters.get("id");
+    ID = parameters.get("id");
     if (ID !== null) {
       // Editing a product
       removeElement("#publishButton");
