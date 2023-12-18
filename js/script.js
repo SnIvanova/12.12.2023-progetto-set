@@ -63,7 +63,7 @@ const displayProducts = (productsArray) => {
     productsContainer.innerHTML = productsArray
       .map(
         ({ name, description, brand, imageUrl, price, _id }) => `
-          <div class="product-card d-flex col-3 card m-3 shadow-sm">
+          <div class="product-card d-flex col-3 card m-3 shadow-sm p-2">
             <div class="m-1">
             <strong class="shirt_text card-title text-center">${name}</strong>
             <img class="card-img-top w-100" src="${imageUrl}" alt="${description}" /></div>
